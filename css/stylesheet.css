@@ -12,7 +12,7 @@ body{
 
 .site-header__wrapper {
     display: flex;
-    margin-right: left;
+    margin-right: auto;
     align-items: center;
     flex-wrap: wrap;
     background-color: white;
