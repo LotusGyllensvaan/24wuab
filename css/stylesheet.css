@@ -1,5 +1,12 @@
-* {
-    font-family: sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.35;
+    font-optical-sizing: auto;
     margin: 0;
     padding: 0;
     border: 0;
@@ -34,6 +41,10 @@
 
 /* Desktop styles */
 @media(min-width: 800px) {
+    .parallax__container{
+        background-attachment: fixed;
+    }
+
     .nav__list {
         margin: 0px;
         padding: 0px;
@@ -55,6 +66,10 @@
 
 /* Mobile styles */
 @media (max-width: 799px) {
+    .parallax__container{
+        background-attachment: scroll;
+    }
+
     .bar {
         display: block;
         width: 25px;
@@ -107,15 +122,26 @@
 /* Hero------------------------------------------------- */
 .hero {
     position: relative;
-    min-height: calc(300px + 15vw);
+    min-height: calc(285px + 15vw);
     display: grid;
 }
 
-.hero__img {
+/* .hero__img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+} */
+
+.parallax__container{
+    position: absolute;
+    background-image: url(../img/LPTest6.jpg);
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero__wrapper {
@@ -131,7 +157,20 @@
     flex: 1;
     z-index: 1;
     padding: 3rem 0 2rem 10rem;
-    max-width: 55ch;
+    max-width: 50ch;
+}
+
+.hero__content-background{
+    backdrop-filter: blur(50px) contrast(200%) sepia(50%);
+    filter: saturate(120%);
+}
+
+/* mobile styles */
+@media (max-width: 799px){
+    .hero__content{
+        padding: 2rem 0 0rem 2rem;
+        max-width: 22ch;
+    }
 }
 
 .hero__content p{
@@ -162,13 +201,7 @@
     margin-right: auto;
 }
 
-body {
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: 300;
-    line-height: 1.35;
-}
-
-img {
+.hero__img {
     max-width: 100%;
     object-fit: cover;
 }
@@ -182,4 +215,75 @@ a {
 *:before,
 *:after {
     box-sizing: border-box;
+}
+
+/* Three card-------------------------------------------- */
+
+.three-card__wrapper{
+    margin-top: 100px;
+    min-height: calc(440px + 15vw);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "c1 c2"
+        "c1 c3"
+    ;
+}
+
+/* .card__img{
+    object-fit: fill;
+    max-width: 100%;
+} */
+
+.card{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card1{
+    grid-area: c1;
+    background-image: url(../img/PerfectBlueBlack.jpeg);
+}
+
+.card__article h2{
+    font-size: 2rem;
+    margin: 0px 0px 0px 0px;
+}
+
+.card2{
+    grid-area: c2;
+    background-image: url(../img/TokyoGodfatherCard.jpg);
+}
+
+.card3{
+    grid-area: c3;
+    background-image: url(../img/PaprikaBlue.webp);
+
+}
+
+
+/* desktop styles */
+@media(min-width: 800px){
+    .three-card__wrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "c1 c2"
+            "c1 c3"
+        ;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 799px){
+    .three-card__wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
+        grid-template-areas: 
+            "c1"
+            "c2"
+            "c3"
+        ;
+    }
 }
