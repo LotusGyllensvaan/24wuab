@@ -5,7 +5,6 @@
     font-weight: 400;
     font-style: normal;
     line-height: 1.35;
-    font-optical-sizing: auto;
     margin: 0;
     padding: 0;
     border: 0;
@@ -22,6 +21,7 @@
 
 /* Header------------------------------------------------- */
 .site-header{
+    background-color: white;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -74,7 +74,7 @@
         width: 25px;
         height: 3px;
         margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
+
         transition: all 0.3s ease-in-out;
         background-color: black;
     }
@@ -128,7 +128,7 @@
 
 .parallax__container{
     position: absolute;
-    background-image: url(../img/LPTest6.jpg);
+    background-image: url(../img/Landing-Page-BG.jpg);
     height: 100%;
     width: 100%;
     inset: 0;
@@ -287,7 +287,7 @@ a {
 }
 .img2{
     grid-area: img2;
-    background-image: url(../img/TokyoGodfatherCard.jpg);
+    background-image: url(../img/TokyoGodfatherRed.jpg);
 
 }
 .img3{
@@ -441,6 +441,7 @@ a {
 
 .bio__content-background{
     padding: 2rem;
+    background-color: #1a1a1a;
 }
 
 .bio__content p{
@@ -473,7 +474,6 @@ a {
         place-content: center start;
     }
     .bio__content-background{
-        background-color: #1a1a1a;
         box-shadow: 12px 12px 0px 1px #dc4e22;
     }
 
@@ -493,22 +493,113 @@ a {
 /* Mobile styles: bio*/
 @media (max-width: 799px) {
     .bio__content{
-        padding: 2rem 0 0rem 2rem;
-        max-width: 32ch;
+        padding: 20rem 0 0rem 0rem;
+        max-width: 38ch;
     }
     .bio__content-background{
-        backdrop-filter: blur(50px);
+        box-shadow: 0 12px 0px #dc4e22;
     }
 
     .bio__content p{
-        color: black;
+        color: white;
     }
     
     .bio__content a {
-        color: black;
+        color: white;
     }
     
     .bio__headline {
-        color: black;
+        color: white;
+    }
+
+    .bio__background-img{
+        clip-path: inset(0 0 0 46%);
+        height: 40%;
     }
 }
+
+/* Works--------------------------------------------------- */
+
+    .works-page__wrapper{
+        background-image: url(../img/CounterComposition.jpg);
+        background-size: contain;
+        background-size: 100%;
+        backdrop-filter: opacity(50%);
+    }
+
+    @media(min-width: 800px) {
+        .works-page__wrapper{
+            background-size: 50%;
+        }
+    }
+
+    .works-cards__wrapper{
+        padding: 10rem 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+  
+  .card {
+    margin: 1rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    min-height: 254px;
+    width: 340px;
+    overflow: hidden;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.09);
+    aspect-ratio: 1/1;
+    text-align: start;
+  }
+  
+  .card-content {
+    z-index: 1;
+    padding: 8px;
+    background-color: white;
+  }
+  
+  
+  .card-image {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+  
+  .card-content-wrapper {
+    display: block !important;
+    text-align: center;
+  }
+  
+  .card-side>*+* {
+    margin-top: 16px;
+  }
+  
+  .stacked .card-content {
+    text-shadow: revert !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-content .card-title {
+    color: #222;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 16px 0;
+  }
+  
+  .card-content .card-subtitle {
+    font-weight: 400;
+    display: block;
+    color: #5a5a5a;
+    font-style: normal;
+  }
+
